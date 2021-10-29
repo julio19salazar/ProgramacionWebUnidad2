@@ -1,0 +1,15 @@
+﻿@model IEnumerable<VillanzicosProyectoJulio.Models.Villancico>
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Inicio";
+}
+<ul>
+    @foreach (var v in Model)
+    {
+        <li>
+            <a href="~/villancico/@v.Nombre.Replace(" ","-").ToLower()/video">@v.Nombre</a>
+            <p>@v.Información</p>
+        </li>
+    }
+   
+</ul>

@@ -1,0 +1,22 @@
+﻿@model VillanzicosProyectoJulio.Models.Villancico
+@{
+    Layout = "_Layout";
+  
+    ViewData["Title"] = "Villancico letra";
+}
+<div class="menu">
+    <a href="~/villancico/@Model.Nombre.Replace(" ","-").ToLower()/video">Video</a>
+    <a href="~/villancico/@Model.Nombre.Replace(" ","-").ToLower()/letra"  class="active">Letra</a>
+    <a href="~/">Otros villancicos</a>
+</div>
+
+<div class="card">
+    <h2>@Model.Nombre</h2>
+    <h3>@(Model.Compositor), @(Model.Anyo)</h3>
+
+    <article>
+        @Html.Raw(@Model.Letra.Replace("\n","<br/>"))
+    </article>
+</div>
+
+

@@ -1,0 +1,18 @@
+﻿@model VillanzicosProyectoJulio.Models.Villancico
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Villancico video";
+
+}
+<div class="menu">
+    <a href="~/villancico/@Model.Nombre.Replace(" ","-").ToLower()/video" class="active">Video</a>
+    <a href="~/villancico/@Model.Nombre.Replace(" ","-").ToLower()/letra">Letra</a>
+    <a href="~/">Otros villancicos</a>
+</div>
+<div class="card">
+    <h2>@Model.Nombre</h2>
+    <h3>@(Model.Compositor), @(Model.Anyo)</h3>
+    <iframe width="560" height="315" src="@Model.VideoUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
